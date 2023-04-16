@@ -1,25 +1,3 @@
 {
-  "events": [
-    {
-      "title": "1",
-      "description": "1",
-      "startDate": "4/3/2023",
-      "endDate": "4/7/2023",
-      "id": 1
-    },
-    {
-      "title": "2",
-      "description": "2",
-      "startDate": "4/10/2023",
-      "endDate": "4/14/2023",
-      "id": 2
-    },
-    {
-      "title": "3",
-      "description": "3",
-      "startDate": "4/18/2023",
-      "endDate": "4/19/2023",
-      "id": 3
-    }
-  ]
+  "events": []
 }

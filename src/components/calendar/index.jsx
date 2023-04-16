@@ -38,12 +38,19 @@ const FullScreenCalendar = () => {
             title: event?.title,
             description: event?.description,
             startDate: event?.startDate,
-            endDate: event?.endDate
+            endDate: event?.endDate,
+            id: event?.id
         });
     };
 
     const handleEventDelete = (eventToDelete) => {
-        dispatch(deleteEventRequest(eventToDelete.id));
+        onDelete(eventToDelete.id);
+        // console.log()
+    };
+    
+    const onDelete = (eventId) => {
+        dispatch(deleteEventRequest(eventId));
+        setEventInfo(null);
     };
 
     const eventStyleGetter = (event) => {
@@ -77,7 +84,6 @@ const FullScreenCalendar = () => {
                 selectable
                 onSelectSlot={handleSelect}
                 onSelectEvent={handleEventClick}
-                onDoubleClickEvent={handleEventDelete}
             />
             {eventInfo && (
                 <Modal onClose={() => setEventInfo(null)}>
@@ -86,6 +92,7 @@ const FullScreenCalendar = () => {
                         <p>Description: {eventInfo?.description ?? ''}</p>
                         <p>Start Date: {eventInfo?.startDate ?? ''}</p>
                         <p>End Date: {eventInfo?.endDate ?? ''}</p>
+                        <button className='button' onClick={() => handleEventDelete(eventInfo)}>Delete</button>
                     </div>
                 </Modal>
             )}
