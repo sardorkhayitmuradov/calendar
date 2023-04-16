@@ -1,0 +1,10 @@
+.modal-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-wrapper p {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
